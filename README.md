@@ -48,6 +48,12 @@ Stop the server:
 docker-compose down
 ```
 
+View q2server logs:
+
+```
+docker-compose logs -f q2server
+```
+
 ## Configuration
 
 Server configuration can be modified by:
