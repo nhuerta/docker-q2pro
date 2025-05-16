@@ -1,6 +1,6 @@
 # docker-q2pro
 
-A complete Dockerized Quake 2 CTF server setup using Q2PRO with integrated web server for file downloads.
+Dockerized Quake 2 CTF server setup using Q2PRO with integrated web server for file downloads.
 
 ## Overview
 
