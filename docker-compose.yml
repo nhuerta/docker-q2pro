@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  q2server:
+    build: .
+    container_name: q2pro-server
+    ports:
+      - "27910:27910/udp"
+    volumes:
+      - ./volumes/baseq2:/home/q2user/.q2pro/baseq2
+      - ./volumes/ctf:/home/q2user/.q2pro/ctf
+      # Additional volume for the lfirecfg directory at the expected location
+      - ./volumes/ctf/lfirecfg:/home/q2user/ctf/lfirecfg
+    restart: unless-stopped
+  q2web:
+    image: nginx:alpine
+    container_name: q2pro-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./volumes:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
